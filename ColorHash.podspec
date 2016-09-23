@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ColorHash"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.summary          = "Color Generator Based on Swift String"
   s.description      = <<-DESC
       This is a Swift port of [Color Hash](https://github.com/zenozeng/color-hash).
