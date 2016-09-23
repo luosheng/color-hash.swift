@@ -44,11 +44,11 @@ public class ColorHash {
     }
     public var HSB: (CGFloat, CGFloat, CGFloat) {
         var hash = CGFloat(bkdrHash)
-        let H = (hash % (full - 1.0)) / full
+        let H = hash.truncatingRemainder(dividingBy: (full - 1.0)) / full
         hash /= full
-        let S = saturation[Int((full * hash) % CGFloat(saturation.count))]
+        let S = saturation[Int((full * hash).truncatingRemainder(dividingBy: CGFloat(saturation.count)))]
         hash /= CGFloat(saturation.count)
-        let B = brightness[Int((full * hash) % CGFloat(brightness.count))]
+        let B = brightness[Int((full * hash).truncatingRemainder(dividingBy: CGFloat(brightness.count)))
         return (H, S, B)
     }
 
