@@ -48,7 +48,7 @@ public class ColorHash {
         hash /= full
         let S = saturation[Int((full * hash).truncatingRemainder(dividingBy: CGFloat(saturation.count)))]
         hash /= CGFloat(saturation.count)
-        let B = brightness[Int((full * hash).truncatingRemainder(dividingBy: CGFloat(brightness.count)))
+        let B = brightness[Int((full * hash).truncatingRemainder(dividingBy: CGFloat(brightness.count)))]
         return (H, S, B)
     }
 
