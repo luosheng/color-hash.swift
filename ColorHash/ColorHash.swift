@@ -21,16 +21,16 @@ let maxSafeInteger = 9007199254740991.0 / seed2
 let defaultLS = [CGFloat(0.35), CGFloat(0.5), CGFloat(0.65)]
 let full = CGFloat(360.0)
 
-public class ColorHash {
-    public private(set) var str: String
-    public private(set) var brightness: [CGFloat]
-    public private(set) var saturation: [CGFloat]
+open class ColorHash {
+    open fileprivate(set) var str: String
+    open fileprivate(set) var brightness: [CGFloat]
+    open fileprivate(set) var saturation: [CGFloat]
     public init(_ str: String, _ saturation: [CGFloat] = defaultLS, _ brightness: [CGFloat] = defaultLS) {
         self.str = str
         self.saturation = saturation
         self.brightness = brightness
     }
-    public var bkdrHash: CGFloat {
+    open var bkdrHash: CGFloat {
         var hash = CGFloat(0)
         for char in "\(str)x".characters {
             if let scl = String(char).unicodeScalars.first?.value {
@@ -42,7 +42,7 @@ public class ColorHash {
         }
         return hash
     }
-    public var HSB: (CGFloat, CGFloat, CGFloat) {
+    open var HSB: (CGFloat, CGFloat, CGFloat) {
         var hash = CGFloat(bkdrHash)
         let H = hash.truncatingRemainder(dividingBy: (full - 1.0)) / full
         hash /= full
@@ -58,7 +58,7 @@ public class ColorHash {
         return UIColor(hue: H, saturation: S, brightness: B, alpha: 1.0)
     }
     #elseif os(OSX)
-    public var color: NSColor {
+    open var color: NSColor {
     let (H, S, B) = HSB
     return NSColor(hue: H, saturation: S, brightness: B, alpha: 1.0)
     }
