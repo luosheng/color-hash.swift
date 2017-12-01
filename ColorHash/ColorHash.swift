@@ -18,7 +18,7 @@ import Foundation
 let seed = CGFloat(131.0)
 let seed2 = CGFloat(137.0)
 let maxSafeInteger = 9007199254740991.0 / seed2
-let defaultLS = [CGFloat(0.35), CGFloat(0.5), CGFloat(0.65)]
+public let defaultLS = [CGFloat(0.35), CGFloat(0.5), CGFloat(0.65)]
 let full = CGFloat(360.0)
 
 public class ColorHash {
@@ -32,7 +32,7 @@ public class ColorHash {
     }
     public var bkdrHash: CGFloat {
         var hash = CGFloat(0)
-        for char in "\(str)x".characters {
+        "\(str)x".forEach { (char) in
             if let scl = String(char).unicodeScalars.first?.value {
                 if hash > maxSafeInteger {
                     hash = hash / seed2
@@ -44,11 +44,11 @@ public class ColorHash {
     }
     public var HSB: (CGFloat, CGFloat, CGFloat) {
         var hash = CGFloat(bkdrHash)
-        let H = (hash % (full - 1.0)) / full
+        let H = (hash.truncatingRemainder(dividingBy: (full - 1.0))) / full
         hash /= full
-        let S = saturation[Int((full * hash) % CGFloat(saturation.count))]
+        let S = saturation[Int((full * hash).truncatingRemainder(dividingBy: CGFloat(saturation.count)))]
         hash /= CGFloat(saturation.count)
-        let B = brightness[Int((full * hash) % CGFloat(brightness.count))]
+        let B = brightness[Int((full * hash).truncatingRemainder(dividingBy: CGFloat(brightness.count)))]
         return (H, S, B)
     }
 

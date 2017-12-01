@@ -15,8 +15,8 @@
         @IBOutlet weak var saturationLabel: UILabel!
         @IBOutlet weak var brightnessLabel: UILabel!
 
-        func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-            let nsString = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
+        func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            let nsString = (textField.text! as NSString).replacingCharacters(in: range, with: string)
             updateBackgroundColor(nsString)
             return true
         }
@@ -30,7 +30,7 @@
         @IBOutlet weak var saturationLabel: NSTextField!
         @IBOutlet weak var brightnessLabel: NSTextField!
 
-        override func controlTextDidChange(obj: NSNotification) {
+        override func controlTextDidChange(_ obj: Notification) {
             updateBackgroundColor()
         }
     }
@@ -39,16 +39,16 @@
 extension ColorHashDemoViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        let def = NSUserDefaults.standardUserDefaults()
-        def.registerDefaults(["str": "Hello World", "s": 0.5, "l": 0.5 ])
+        let def = UserDefaults.standard
+        def.register(defaults: ["str": "Hello World", "s": 0.5, "l": 0.5 ])
         #if os(iOS) || os(tvOS)
-            textField.text = def.stringForKey("str")
-            saturationSlider.value = def.floatForKey("s")
-            brightnessSlider.value = def.floatForKey("l")
+            textField.text = def.string(forKey: "str")
+            saturationSlider.value = def.float(forKey: "s")
+            brightnessSlider.value = def.float(forKey: "l")
         #elseif os(OSX)
-            textField.stringValue = def.stringForKey("str") ?? ""
-            saturationSlider.floatValue = def.floatForKey("s")
-            brightnessSlider.floatValue = def.floatForKey("l")
+            textField.stringValue = def.string(forKey: "str") ?? ""
+            saturationSlider.floatValue = def.float(forKey: "s")
+            brightnessSlider.floatValue = def.float(forKey: "l")
         #endif
         updateBackgroundColor()
     }
@@ -56,7 +56,8 @@ extension ColorHashDemoViewController {
         updateBackgroundColor()
     }
 
-    private func updateBackgroundColor(var str: String? = nil) {
+    private func updateBackgroundColor(_ str: String? = nil) {
+        var str = str
         #if os(iOS) || os(tvOS)
             let s = saturationSlider.value
             let l = brightnessSlider.value
@@ -66,12 +67,12 @@ extension ColorHashDemoViewController {
             let l = brightnessSlider.floatValue
             str = str ?? textField.stringValue
         #endif
-        self.setBackgroundColor(ColorHash(str!, [CGFloat(s)], [CGFloat(l)]).color)
-        setLabelText(saturationLabel, text: "Saturation\n\(s)")
-        setLabelText(brightnessLabel, text: "Brightness\n\(l)")
-        let def = NSUserDefaults.standardUserDefaults()
-        def.setFloat(s, forKey: "s")
-        def.setFloat(l, forKey: "l")
+        self.setBackgroundColor(c: ColorHash(str!, [CGFloat(s)], [CGFloat(l)]).color)
+        setLabelText(label: saturationLabel, text: "Saturation\n\(s)")
+        setLabelText(label: brightnessLabel, text: "Brightness\n\(l)")
+        let def = UserDefaults.standard
+        def.set(s, forKey: "s")
+        def.set(l, forKey: "l")
         def.setValue(str, forKey: "str")
         def.synchronize()
     }
@@ -87,7 +88,7 @@ extension ColorHashDemoViewController {
     #elseif os(OSX)
     private func setBackgroundColor(c: NSColor) {
         let layer = CALayer()
-        layer.backgroundColor = c.CGColor
+        layer.backgroundColor = c.cgColor
         view.wantsLayer = true
         view.layer = layer
     }
