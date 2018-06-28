@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73E8977F20E4B21B00042773 /* ColorHash.h in Headers */ = {isa = PBXBuildFile; fileRef = 73E8977D20E4B21B00042773 /* ColorHash.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73E8978220E4B21B00042773 /* ColorHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E8977B20E4B21B00042773 /* ColorHash.framework */; };
+		73E8978320E4B21B00042773 /* ColorHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E8977B20E4B21B00042773 /* ColorHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		73E8978820E4B23F00042773 /* ColorHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85154FB81C1D485A0006085B /* ColorHash.swift */; };
 		85154F751C1D28D50006085B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85154F741C1D28D50006085B /* AppDelegate.swift */; };
 		85154F7A1C1D28D50006085B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85154F781C1D28D50006085B /* Main.storyboard */; };
 		85154F7C1C1D28D50006085B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85154F7B1C1D28D50006085B /* Assets.xcassets */; };
@@ -35,6 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		73E8978020E4B21B00042773 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85249C481C060C7100CAA3B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73E8977A20E4B21B00042773;
+			remoteInfo = ColorHash;
+		};
 		85154FCB1C1D4F230006085B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 85249C481C060C7100CAA3B1 /* Project object */;
@@ -52,6 +63,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		73E8978720E4B21B00042773 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				73E8978320E4B21B00042773 /* ColorHash.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85154FE11C1D4F230006085B /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -77,6 +99,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		73E8977B20E4B21B00042773 /* ColorHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ColorHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73E8977D20E4B21B00042773 /* ColorHash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorHash.h; sourceTree = "<group>"; };
+		73E8977E20E4B21B00042773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85154F721C1D28D50006085B /* ColorHashDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ColorHashDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85154F741C1D28D50006085B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85154F791C1D28D50006085B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,10 +135,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		73E8977720E4B21B00042773 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85154F6F1C1D28D50006085B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73E8978220E4B21B00042773 /* ColorHash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +174,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		73E8977C20E4B21B00042773 /* ColorHash */ = {
+			isa = PBXGroup;
+			children = (
+				73E8977D20E4B21B00042773 /* ColorHash.h */,
+				73E8977E20E4B21B00042773 /* Info.plist */,
+			);
+			path = ColorHash;
+			sourceTree = "<group>";
+		};
 		85154F731C1D28D50006085B /* ColorHashDemo-iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +267,7 @@
 				85154FBE1C1D4F230006085B /* ColorHashDemo-watchOS */,
 				85154FCD1C1D4F230006085B /* ColorHashDemo-watchOS Extension */,
 				85154FEA1C1D50D10006085B /* ColorHashDemo-tvOS */,
+				73E8977C20E4B21B00042773 /* ColorHash */,
 				85249C511C060C7100CAA3B1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -237,13 +280,43 @@
 				85154FBD1C1D4F230006085B /* ColorHashDemo-watchOS.app */,
 				85154FC91C1D4F230006085B /* ColorHashDemo-watchOS Extension.appex */,
 				85154FE91C1D50D10006085B /* ColorHashDemo-tvOS.app */,
+				73E8977B20E4B21B00042773 /* ColorHash.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		73E8977820E4B21B00042773 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E8977F20E4B21B00042773 /* ColorHash.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		73E8977A20E4B21B00042773 /* ColorHash */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73E8978620E4B21B00042773 /* Build configuration list for PBXNativeTarget "ColorHash" */;
+			buildPhases = (
+				73E8977620E4B21B00042773 /* Sources */,
+				73E8977720E4B21B00042773 /* Frameworks */,
+				73E8977820E4B21B00042773 /* Headers */,
+				73E8977920E4B21B00042773 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ColorHash;
+			productName = ColorHash;
+			productReference = 73E8977B20E4B21B00042773 /* ColorHash.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		85154F711C1D28D50006085B /* ColorHashDemo-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85154F831C1D28D50006085B /* Build configuration list for PBXNativeTarget "ColorHashDemo-iOS" */;
@@ -252,11 +325,13 @@
 				85154F6F1C1D28D50006085B /* Frameworks */,
 				85154F701C1D28D50006085B /* Resources */,
 				85154FE31C1D4F230006085B /* Embed Watch Content */,
+				73E8978720E4B21B00042773 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				85154FDA1C1D4F230006085B /* PBXTargetDependency */,
+				73E8978120E4B21B00042773 /* PBXTargetDependency */,
 			);
 			name = "ColorHashDemo-iOS";
 			productName = "ColorHashDemo-iOS";
@@ -341,6 +416,10 @@
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "LittleApps Inc.";
 				TargetAttributes = {
+					73E8977A20E4B21B00042773 = {
+						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
+					};
 					85154F711C1D28D50006085B = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
@@ -376,11 +455,19 @@
 				85154FBC1C1D4F230006085B /* ColorHashDemo-watchOS */,
 				85154FC81C1D4F230006085B /* ColorHashDemo-watchOS Extension */,
 				85154FE81C1D50D10006085B /* ColorHashDemo-tvOS */,
+				73E8977A20E4B21B00042773 /* ColorHash */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		73E8977920E4B21B00042773 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85154F701C1D28D50006085B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -429,6 +516,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		73E8977620E4B21B00042773 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E8978820E4B23F00042773 /* ColorHash.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85154F6E1C1D28D50006085B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -473,6 +568,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		73E8978120E4B21B00042773 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73E8977A20E4B21B00042773 /* ColorHash */;
+			targetProxy = 73E8978020E4B21B00042773 /* PBXContainerItemProxy */;
+		};
 		85154FCC1C1D4F230006085B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 85154FC81C1D4F230006085B /* ColorHashDemo-watchOS Extension */;
@@ -529,10 +629,77 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		73E8978420E4B21B00042773 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ColorHash/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.oneteam.ColorHash;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		73E8978520E4B21B00042773 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ColorHash/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.oneteam.ColorHash;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		85154F811C1D28D50006085B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "ColorHashDemo-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.ngs.ColorHashDemo-iOS";
@@ -544,7 +711,9 @@
 		85154F821C1D28D50006085B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "ColorHashDemo-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.ngs.ColorHashDemo-iOS";
@@ -776,6 +945,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		73E8978620E4B21B00042773 /* Build configuration list for PBXNativeTarget "ColorHash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73E8978420E4B21B00042773 /* Debug */,
+				73E8978520E4B21B00042773 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		85154F831C1D28D50006085B /* Build configuration list for PBXNativeTarget "ColorHashDemo-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
