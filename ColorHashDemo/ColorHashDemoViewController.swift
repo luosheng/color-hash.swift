@@ -30,7 +30,7 @@
         @IBOutlet weak var saturationLabel: NSTextField!
         @IBOutlet weak var brightnessLabel: NSTextField!
 
-        override func controlTextDidChange(_ obj: Notification) {
+        func controlTextDidChange(_ obj: Notification) {
             updateBackgroundColor()
         }
     }
